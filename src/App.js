@@ -1,15 +1,12 @@
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
   Routes,
 } from "react-router-dom";
 import Navbar from "./scenes/Navbar";
-import DotGroup from "./scenes/DotGroup";
 import Landing from "./scenes/Landing";
 import { useState, useEffect } from "react";
 import useMediaQuery from "./hooks/useMediaQuery";
-import { Link } from "react-router-dom";
 import AboutPage from "./scenes/AboutPage"; // Импортируйте страницу "О программе"
 import NewsComponent from "./scenes/NewsComponent";
 import States from "./scenes/States";
@@ -18,7 +15,6 @@ import CountryPage from "./scenes/CountryPage";
 function App() {
   const [selectedPage, setSelectedPage] = useState("Главная");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
-  const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
 
   useEffect(() => {
     const handleScroll = () => {

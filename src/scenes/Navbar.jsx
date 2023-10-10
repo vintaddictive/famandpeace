@@ -31,14 +31,18 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
   return (
     <nav className="z-40 w-full fixed top-0 py-3 bg-white ">
       <div className="w-11/12  flex items-center justify-between mx-auto  gap-10 h-12 ">
-        <Link to={"/"}>
-          <img src="/logomain.png" alt="logomain" />
+        <Link to={"/"} >
+          <img src="/logomain.png" alt="logomain"
+					 />
+					
         </Link>
         {isAboveSmallScreens ? (
           <div className="flex justify-between gap-16 mx-auto items-center text-neutral-800 text-md md:text-lg  font-semibold">
 <MenuProvider>
-  <DropdownMenu1 />
-  <DropdownMenu2 />
+  <DropdownMenu1
+	setIsMenuToggled={setIsMenuToggled} />
+  <DropdownMenu2
+	setIsMenuToggled={setIsMenuToggled} />
 </MenuProvider>
 <Link to="/russia" className="text-neutral-800 text-md md:text-lg  font-semibold"
 								onClick={() => setIsMenuToggled(false)}>
@@ -65,8 +69,10 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
               <div className="flex flex-col gap-6 w-11/12 mx-auto text-3xl font-bold items-start justify-start mt-6">
 							<SearchComponent  />
 								<MenuProvider>
-  <DropdownMenu1 />
-  <DropdownMenu2 />
+  <DropdownMenu1
+	setIsMenuToggled={setIsMenuToggled} />
+  <DropdownMenu2
+	setIsMenuToggled={setIsMenuToggled} />
 </MenuProvider>
                 <Link to="/russia" className="text-black text-3xl font-bold sm:font-semibold font-['Golos'] leading-7"
 								onClick={() => setIsMenuToggled(false)}>

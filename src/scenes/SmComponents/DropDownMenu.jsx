@@ -6,16 +6,21 @@ import {Link} from "react-router-dom";
 
 import { MenuProvider } from './MenuContext';
 
-export const DropdownMenu1 = ({ page, selectedPage, setSelectedPage }) => {
+export const DropdownMenu1 = ({ setIsMenuToggled }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [arrowDirection, setArrowDirection] = useState("down");
+
+
 	const {openMenu, handleOpen, handleClose} = useContext(MenuContext);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
     setArrowDirection(arrowDirection === "down" ? "up" : "down");
   };
-
+  const handleLinkClick = () => {
+    setIsMenuToggled(false);
+  }
+  
   return (
 		<div
 		 onClick={toggleMenu}
@@ -36,16 +41,20 @@ export const DropdownMenu1 = ({ page, selectedPage, setSelectedPage }) => {
       </div>
       {isOpen && (
         <div className="mt-2 relative md:absolute bg-white rounded-lg flex flex-col ">
-          <Link to="/states" className="text-black text-lg font-normal font-['Golos'] leading-loose cursor-pointer hover:text-red transition duration-100">
+          <Link to="/about" className="text-black text-lg font-normal font-['Golos'] leading-loose cursor-pointer hover:text-red transition duration-100"
+					onClick={handleLinkClick}>
 					О программе
           </Link>
-          <Link to="/states" className="text-black text-lg font-normal font-['Golos'] leading-loose cursor-pointer hover:text-red transition duration-100">
+          <Link to="/about" className="text-black text-lg font-normal font-['Golos'] leading-loose cursor-pointer hover:text-red transition duration-100"
+					onClick={handleLinkClick}>
 					Страны — участницы
           </Link>
-          <Link to="/states" className="text-black text-lg font-normal font-['Golos'] leading-loose cursor-pointer hover:text-red transition duration-100">
+          <Link to="/about" className="text-black text-lg font-normal font-['Golos'] leading-loose cursor-pointer hover:text-red transition duration-100"
+					onClick={handleLinkClick}>
 					Пресс-центр
           </Link>
-          <Link to="/states" className="text-black text-lg font-normal font-['Golos'] leading-loose cursor-pointer hover:text-red transition duration-100">
+          <Link to="/about" className="text-black text-lg font-normal font-['Golos'] leading-loose cursor-pointer hover:text-red transition duration-100"
+					onClick={handleLinkClick}>
 					Экспертный совет
           </Link>
         </div>
@@ -54,10 +63,14 @@ export const DropdownMenu1 = ({ page, selectedPage, setSelectedPage }) => {
   );
 };
 
-export const DropdownMenu2 = ({ page, selectedPage, setSelectedPage }) => {
+export const DropdownMenu2 = ({ setIsMenuToggled }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [arrowDirection, setArrowDirection] = useState("down");
 	const {openMenu, handleOpen, handleClose} = useContext(MenuContext);
+
+  const handleLinkClick = () => {
+    setIsMenuToggled(false);
+  }
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -83,13 +96,16 @@ export const DropdownMenu2 = ({ page, selectedPage, setSelectedPage }) => {
       </div>
       {isOpen && (
         <div className="mt-2 relative md:absolute bg-white rounded-lg flex flex-col">
-          <Link to="/states" className="text-black text-lg font-normal font-['Golos'] leading-loose cursor-pointer hover:text-red transition duration-100">
+          <Link to="/states" className="text-black text-lg font-normal font-['Golos'] leading-loose cursor-pointer hover:text-red transition duration-100"
+					onClick={handleLinkClick}>
             Культура
           </Link>
-          <Link to="/states" className="text-black text-lg font-normal font-['Golos'] leading-loose cursor-pointer hover:text-red transition duration-100">
+          <Link to="/states" className="text-black text-lg font-normal font-['Golos'] leading-loose cursor-pointer hover:text-red transition duration-100"
+					onClick={handleLinkClick}>
             Образование
           </Link>
-          <Link to="/states" className="text-black text-lg font-normal font-['Golos'] leading-loose cursor-pointer hover:text-red transition duration-100">
+          <Link to="/states" className="text-black text-lg font-normal font-['Golos'] leading-loose cursor-pointer hover:text-red transition duration-100"
+					onClick={handleLinkClick}>
             Благотворительность
           </Link>
         </div>
