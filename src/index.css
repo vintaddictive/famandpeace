@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  overflow: auto;
+  overflow-x: hidden;
+}
+#root,
+.app {
+  height: 100%;
+  background-color: #f6f6f6;
+  @apply text-black;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+.cleancolor {
+  background-image: linear-gradient(
+    90deg,
+    #68bdeb 0%,
+    #61b3e4 19%,
+    #519ad3 52%,
+    #3771b7 93%,
+    #3269b2 100%
+  );
+}
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(
+    98deg,
+    #d41216 0%,
+    #d61b1e 17%,
+    #dd3437 46%,
+    #ee5152 83%,
+    #ee7372 100%
+  );
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(
+    90deg,
+    #68bdeb 0%,
+    #61b3e4 19%,
+    #519ad3 52%,
+    #3771b7 93%,
+    #3269b2 100%
+  );
+}
+::-webkit-scrollbar-track {
+  background-color: #f6f6f6;
+}
+.tabsContainer {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.tabsContainer::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.hidden {
+  display: none;
+}
+css
+
+/* Изменение фона выделяемого текста */
+::selection {
+  background-image: linear-gradient(
+    90deg,
+    #68bdeb 0%,
+    #61b3e4 19%,
+    #519ad3 52%,
+    #3771b7 93%,
+    #3269b2 100%
+  ); /* Вы можете выбрать любой цвет */
+  color: black; /* Цвет текста при выделении */
+}
+
+/* Для кросс-браузерной поддержки, включая браузеры на движке Webkit (Safari, Chrome и т.д.) */
+::-webkit-selection {
+  background-image: linear-gradient(
+    90deg,
+    #68bdeb 0%,
+    #61b3e4 19%,
+    #519ad3 52%,
+    #3771b7 93%,
+    #3269b2 100%
+  ); /* Вы можете выбрать любой цвет */
+  color: black; /* Цвет текста при выделении */
+}
+
+/* Для браузера Mozilla Firefox */
+::-moz-selection {
+  background-image: linear-gradient(
+    90deg,
+    #68bdeb 0%,
+    #61b3e4 19%,
+    #519ad3 52%,
+    #3771b7 93%,
+    #3269b2 100%
+  ); /* Вы можете выбрать любой цвет */
+  color: black; /* Цвет текста при выделении */
+}
