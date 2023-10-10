@@ -39,11 +39,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-<<<<<<< HEAD
+
 		"build": "CI=false && ESLINT_NO_DEV_ERRORS=true react-scripts build",
-=======
-    "build": "CI=false && ESLINT_NO_DEV_ERRORS=true react-scripts build",
->>>>>>> 69e1a97d7cf3ab0c35c7a6a7cf87f2875821bdb0
+
+
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
